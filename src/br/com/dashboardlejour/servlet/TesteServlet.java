@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.dashboardlejour.bean.Wedding;
-import br.com.dashboardlejour.service.WeddingService;
+import br.com.dashboardlejour.bean.Invoice;
+import br.com.dashboardlejour.service.InvoiceService;
 
 /**
  * Servlet implementation class TesteServlet
@@ -33,12 +33,12 @@ public class TesteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		WeddingService clienteService = new WeddingService();
+		InvoiceService service = new InvoiceService();
 		
-		List<Wedding> weddings = clienteService.getAll();
+		List<Invoice> beanList = service.getAll();
 		
-		for (Wedding wedding : weddings) {
-			response.getWriter().append(wedding.toString()+"<br>");
+		for (Invoice bean : beanList) {
+			response.getWriter().append(bean.toString()+"<br>");
 		}
 		
 	}
