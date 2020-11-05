@@ -9,24 +9,33 @@ public class Wedding implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String ID;
 	private String OWNER_ID;
+	private String BUDGET;
 	private String WEDDING_DATE;
 	private String NUMBER_OF_GUESTS;
 	private String STYLE;
 	
-	public String getID() {
-		return ID;
+	public int getID() {
+		return Integer.parseInt(ID);
 	}
 	
-	public void setID(String iD) {
-		ID = iD;
+	public void setID(int iD) {
+		ID = Integer.toString(iD);
 	}
 	
-	public String getOWNER_ID() {
-		return OWNER_ID;
+	public int getOWNER_ID() {
+		return Integer.parseInt(OWNER_ID);
 	}
 	
-	public void setOWNER_ID(String oWNER_ID) {
-		OWNER_ID = oWNER_ID;
+	public void setOWNER_ID(int oWNER_ID) {
+		OWNER_ID = Integer.toString(oWNER_ID);
+	}
+	
+	public double getBUDGET() {
+		return Double.parseDouble(BUDGET);
+	}
+	
+	public void setBUDGET(double bUDGET) {
+		BUDGET = Double.toString(bUDGET);
 	}
 
 	public String getWEDDING_DATE() {
@@ -36,13 +45,13 @@ public class Wedding implements Serializable{
 	public void setWEDDING_DATE(String wEDDING_DATE) {
 		WEDDING_DATE = wEDDING_DATE;
 	}
-
-	public String getNUMBER_OF_GUESTS() {
-		return NUMBER_OF_GUESTS;
+	
+	public void setNUMBER_OF_GUESTS(int nUMBER_OF_GUESTS) {
+		WEDDING_DATE = Integer.toString(nUMBER_OF_GUESTS);
 	}
 
-	public void setNUMBER_OF_GUESTS(String nUMBER_OF_GUESTS) {
-		NUMBER_OF_GUESTS = nUMBER_OF_GUESTS;
+	public int getNUMBER_OF_GUESTS() {
+		return Integer.parseInt(NUMBER_OF_GUESTS);
 	}
 
 	public String getSTYLE() {
@@ -58,6 +67,7 @@ public class Wedding implements Serializable{
 	public String toString() {
 		return "[ID = "+ ID 
 				+ ", OWNER_ID = "+ OWNER_ID 
+				+ ", BUDGET = "+ BUDGET 
 				+ ", WEDDING_DATE = "+ WEDDING_DATE
 				+ ", NUMBER_OF_GUESTS = "+ NUMBER_OF_GUESTS
 				+", STYLE = "+ STYLE +"]";
