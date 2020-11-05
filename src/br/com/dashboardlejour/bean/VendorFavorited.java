@@ -10,20 +10,20 @@ public class VendorFavorited implements Serializable{
 	private String wedding_id;
 	private String vendor_id;
 	
-	public String getWeeding_id() {
-		return wedding_id;
+	public int getWeeding_id() {
+		return Integer.parseInt(wedding_id);
 	}
 	
-	public void setWeeding_id(String wedding_id) {
-		this.wedding_id = wedding_id;
+	public void setWeeding_id(int wedding_id) {
+		this.wedding_id = Integer.toString(wedding_id);
 	}
 
-	public String getVendor_id() {
-		return vendor_id;
+	public int getVendor_id() {
+		return Integer.parseInt(vendor_id);
 	}
 
-	public void setVendor_id(String vendor_id) {
-		this.vendor_id = vendor_id;
+	public void setVendor_id(int vendor_id) {
+		this.vendor_id = Integer.toString(vendor_id);
 	}
 	
 	@Override

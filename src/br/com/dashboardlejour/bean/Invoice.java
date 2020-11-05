@@ -8,52 +8,52 @@ public class Invoice {
 	private String VENDOR_AMOUNT;
 	private String ACCEPTED;
 	
-	public String getID() {
-		return ID;
+	public int getID() {
+		return Integer.parseInt(ID);
 	}
 	
-	public void setID(String iD) {
-		ID = iD;
+	public void setID(int iD) {
+		ID = Integer.toString(iD);
 	}
 
-	public String getWEDDING_ID() {
-		return WEDDING_ID;
+	public int getWEDDING_ID() {
+		return Integer.parseInt(WEDDING_ID);
 	}
 
-	public void setWEDDING_ID(String wEDDING_ID) {
-		WEDDING_ID = wEDDING_ID;
+	public void setWEDDING_ID(int wEDDING_ID) {
+		WEDDING_ID = Integer.toString(wEDDING_ID);
 	}
 
-	public String getVENDOR_ID() {
-		return VENDOR_ID;
+	public int getVENDOR_ID() {
+		return Integer.parseInt(VENDOR_ID);
 	}
 
-	public void setVENDOR_ID(String vENDOR_ID) {
-		VENDOR_ID = vENDOR_ID;
+	public void setVENDOR_ID(int vENDOR_ID) {
+		VENDOR_ID = Integer.toString(vENDOR_ID);
 	}
 
-	public String getAMOUNT() {
-		return AMOUNT;
+	public double getAMOUNT() {
+		return Double.parseDouble(AMOUNT);
 	}
 
-	public void setAMOUNT(String aMOUNT) {
-		AMOUNT = aMOUNT;
+	public void setAMOUNT(double aMOUNT) {
+		AMOUNT = Double.toString(aMOUNT);
 	}
 
-	public String getVENDOR_AMOUNT() {
-		return VENDOR_AMOUNT;
+	public double getVENDOR_AMOUNT() {
+		return Double.parseDouble(VENDOR_AMOUNT);
 	}
 
-	public void setVENDOR_AMOUNT(String vENDOR_AMOUNT) {
-		VENDOR_AMOUNT = vENDOR_AMOUNT;
+	public void setVENDOR_AMOUNT(double vENDOR_AMOUNT) {
+		VENDOR_AMOUNT = Double.toString(vENDOR_AMOUNT);
 	}
 
-	public String getACCEPTED() {
-		return ACCEPTED;
+	public boolean getACCEPTED() {
+		return Boolean.parseBoolean(ACCEPTED);
 	}
 
-	public void setACCEPTED(String aCCEPTED) {
-		ACCEPTED = aCCEPTED;
+	public void setACCEPTED(boolean aCCEPTED) {
+		ACCEPTED = Boolean.toString(aCCEPTED);
 	}
 	
 	@Override
