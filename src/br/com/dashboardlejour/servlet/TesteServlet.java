@@ -38,7 +38,7 @@ public class TesteServlet extends HttpServlet {
 		List<Wedding> weddings = clienteService.getAll();
 		
 		for (Wedding wedding : weddings) {
-			response.getWriter().append(wedding.toString());
+			response.getWriter().append(wedding.toString()+"<br>");
 		}
 		
 	}

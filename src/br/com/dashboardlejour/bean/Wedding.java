@@ -1,25 +1,25 @@
 package br.com.dashboardlejour.bean;
 
 public class Wedding {
-	private int ID;
-	private int OWNER_ID;
+	private String ID;
+	private String OWNER_ID;
 	private String WEDDING_DATE;
-	private int NUMBER_OF_GUESTS;
+	private String NUMBER_OF_GUESTS;
 	private String STYLE;
 	
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
 	
-	public void setID(int iD) {
+	public void setID(String iD) {
 		ID = iD;
 	}
 	
-	public int getOWNER_ID() {
+	public String getOWNER_ID() {
 		return OWNER_ID;
 	}
 	
-	public void setOWNER_ID(int oWNER_ID) {
+	public void setOWNER_ID(String oWNER_ID) {
 		OWNER_ID = oWNER_ID;
 	}
 
@@ -31,11 +31,11 @@ public class Wedding {
 		WEDDING_DATE = wEDDING_DATE;
 	}
 
-	public int getNUMBER_OF_GUESTS() {
+	public String getNUMBER_OF_GUESTS() {
 		return NUMBER_OF_GUESTS;
 	}
 
-	public void setNUMBER_OF_GUESTS(int nUMBER_OF_GUESTS) {
+	public void setNUMBER_OF_GUESTS(String nUMBER_OF_GUESTS) {
 		NUMBER_OF_GUESTS = nUMBER_OF_GUESTS;
 	}
 
