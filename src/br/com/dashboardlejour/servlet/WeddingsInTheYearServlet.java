@@ -1,6 +1,8 @@
 package br.com.dashboardlejour.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,16 +18,16 @@ import br.com.dashboardlejour.business.BusinessWeddingInTheYear;
 import br.com.dashboardlejour.helpers.DateHelper;
 
 /**
- * Servlet implementation class TesteServlet
+ * Servlet implementation class WeddingsInTheYearServlet
  */
-@WebServlet("/TesteServlet")
-public class TesteServlet extends HttpServlet {
+@WebServlet("/weddings_during_year")
+public class WeddingsInTheYearServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TesteServlet() {
+    public WeddingsInTheYearServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,28 +37,7 @@ public class TesteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		BusinessParams businessParams = new BusinessParams(null, null, "2019", "moderno", null);
-		BusinessWeddingInTheYear business = new BusinessWeddingInTheYear();
-		
-		List<BusinessWeddingInTheYear> businessList = business.getWeddingsInTheYear(businessParams);
-		
-		/*for (BusinessWeddingInTheYear item : businessList) {
-			response.getWriter().append(item.toString()+"<br>");
-		}*/
-		
-		String jsonString = new Gson().toJson(businessList);
-		response.getWriter().append(jsonString);
-		
-		/*String teste = "2020-11-09 00:00:00";
-		
-		if(teste.indexOf("NULL") != -1) {
-			response.getWriter().append("ACHOU");
-		}else {
-			response.getWriter().append("NÃO ACHOU");
-		}*/
-		
+		handleRequest(request, response);
 	}
 
 	/**
@@ -64,7 +45,33 @@ public class TesteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		handleRequest(request, response);
 	}
+	
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		 
+        
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+ 
+        BusinessParams businessParams = new BusinessParams(request);
+        
+        BusinessWeddingInTheYear business = new BusinessWeddingInTheYear();
+        List<BusinessWeddingInTheYear> businessList = null;
+        
+        if( businessParams.getYear() != null || businessParams.getWeddingType() != null ) {
+        	businessList = business.getWeddingsInTheYear(businessParams);
+        }else {
+        	businessList = business.getWeddingsInTheYear();
+        }
+		
+		String jsonString = new Gson().toJson(businessList);
+		
+		response.getWriter().append(jsonString);
+ 
+        out.close();
+ 
+    }
 
 }

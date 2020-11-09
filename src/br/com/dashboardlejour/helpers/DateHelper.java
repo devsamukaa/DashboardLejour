@@ -27,6 +27,10 @@ public class DateHelper {
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
+		if(dateString.indexOf("-") != -1) {
+			dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		}
+		
 		if(dateString.length() < 19) {
 			dateString += " 00:00:00";
 		}
@@ -34,7 +38,9 @@ public class DateHelper {
 		Date date = null;
 		
 		try {
-			date = dateFormat.parse(dateString);
+			if(dateString.indexOf("NULL") == -1) {
+				date = dateFormat.parse(dateString);
+			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

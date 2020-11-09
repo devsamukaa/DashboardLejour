@@ -13,12 +13,12 @@ import com.google.gson.reflect.TypeToken;
 
 import br.com.dashboardlejour.bean.Invoice;
 
-public class InvoiceService {
+public class BusinessWeddingInTheYear {
 	private Client client;
 	 
 	private final String URL_SERVICE = "https://sheet2api.com/v1/ByR2h1huRjyQ/fiap/invoice";
  
-	public InvoiceService() {
+	public BusinessWeddingInTheYear() {
 		this.client = ClientBuilder.newClient();  
 	}
 	
