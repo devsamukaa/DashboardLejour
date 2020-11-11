@@ -2,7 +2,6 @@ package br.com.dashboardlejour.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,21 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import br.com.dashboardlejour.business.BusinessHigherBudgetWeddings;
 import br.com.dashboardlejour.business.BusinessParams;
 import br.com.dashboardlejour.business.BusinessWeddingInTheYear;
-import br.com.dashboardlejour.helpers.DateHelper;
 
 /**
- * Servlet implementation class WeddingsInTheYearServlet
+ * Servlet implementation class WeddingsHigherBudgetWeddings
  */
-@WebServlet("/weddings_during_year")
-public class WeddingsInTheYearServlet extends HttpServlet {
+@WebServlet("/WeddingsHigherBudgetWeddings")
+public class HigherBudgetWeddingsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public WeddingsInTheYearServlet() {
+    public HigherBudgetWeddingsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -57,14 +56,10 @@ public class WeddingsInTheYearServlet extends HttpServlet {
  
         BusinessParams businessParams = new BusinessParams(request);
         
-        BusinessWeddingInTheYear business = new BusinessWeddingInTheYear();
-        List<BusinessWeddingInTheYear> businessList = null;
+        BusinessHigherBudgetWeddings business = new BusinessHigherBudgetWeddings();
+        List<BusinessHigherBudgetWeddings> businessList = null;
         
-        if( businessParams.getYear() != null || businessParams.getWeddingType() != null ) {
-        	businessList = business.getWeddingsInTheYear(businessParams);
-        }else {
-        	businessList = business.getWeddingsInTheYear();
-        }
+        businessList = business.getWeddingsWithBudgetOverX(businessParams);
 		
 		String jsonString = new Gson().toJson(businessList);
 		
@@ -73,5 +68,6 @@ public class WeddingsInTheYearServlet extends HttpServlet {
         out.close();
  
     }
+
 
 }

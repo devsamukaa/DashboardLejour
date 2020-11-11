@@ -187,7 +187,7 @@ public class BusinessWeddingInTheYear {
 		list.add(new BusinessWeddingInTheYear("Out", 0));
 		list.add(new BusinessWeddingInTheYear("Nov", 0));
 		list.add(new BusinessWeddingInTheYear("Dez", 0));
-		list.add(new BusinessWeddingInTheYear("s/ data", 0));
+		list.add(new BusinessWeddingInTheYear("s_data", 0));
 		
 		return list;
 	}

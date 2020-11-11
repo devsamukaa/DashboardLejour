@@ -31,7 +31,13 @@ public class Wedding implements Serializable{
 	}
 	
 	public double getBUDGET() {
-		return Double.parseDouble(BUDGET);
+		
+		if (BUDGET.equals("NULL")) {
+			return 0;
+		} else {
+			return Double.parseDouble(BUDGET);
+		}
+		
 	}
 	
 	public void setBUDGET(double bUDGET) {
