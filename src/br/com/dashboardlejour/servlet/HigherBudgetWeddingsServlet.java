@@ -19,7 +19,7 @@ import br.com.dashboardlejour.business.BusinessWeddingInTheYear;
 /**
  * Servlet implementation class WeddingsHigherBudgetWeddings
  */
-@WebServlet("/WeddingsHigherBudgetWeddings")
+@WebServlet("/HigherBudgetWeddings")
 public class HigherBudgetWeddingsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
