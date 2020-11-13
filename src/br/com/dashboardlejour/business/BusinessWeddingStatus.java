@@ -75,8 +75,6 @@ public class BusinessWeddingStatus {
 	
 	public List<BusinessWeddingStatus> getWeddingStatus(){
 			
-			
-			
 		List<BusinessWeddingStatus> list = this.getResetedListWeddingStatus();
 			
 		WeddingService service = new WeddingService();
@@ -88,8 +86,6 @@ public class BusinessWeddingStatus {
 		List<VendorFavorited> vendorsList = vendor.getAll();
 		List<Appointment> appointmentList = appointment.getAll();
 		List<Invoice> invoicesList = invoice.getAll();
-			
-			
 
 		for(Wedding wedding : weddingsList) {
 			int listIndex = -1;
@@ -134,8 +130,6 @@ public class BusinessWeddingStatus {
 		List<VendorFavorited> vendorsList = vendor.getAll();
 		List<Appointment> appointmentList = appointment.getAll();
 		List<Invoice> invoicesList = invoice.getAll();
-			
-			
 
 		for(Wedding wedding : weddingsList) {
 			int listIndex = -1;
@@ -202,10 +196,7 @@ public class BusinessWeddingStatus {
 
 				}
 			}
-			BusinessWeddingStatus lastValue = null;
-			lastValue = list.get(listIndex);
-			lastValue = this.IncrementWedding(lastValue);
-			list.set(listIndex, lastValue);
+			
 		}
 			
 		return list;
