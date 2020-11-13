@@ -28,11 +28,11 @@ public class DateHelper {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
 		if(dateString.indexOf("-") != -1) {
-			dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		}
 		
-		if(dateString.length() < 19) {
-			dateString += " 00:00:00";
+		if(dateString.length() < 16) {
+			dateString += " 00:00";
 		}
 		
 		Date date = null;

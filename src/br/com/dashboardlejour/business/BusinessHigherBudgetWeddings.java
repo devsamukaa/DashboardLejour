@@ -71,11 +71,11 @@ public class BusinessHigherBudgetWeddings {
 				
 			}
 			
-			//Obtendo a data para poder obter o mês;
+			//Obtendo a data para diferenciar casamentos com e sem data
 			Date weddingDate = DateHelper.parseDate(wedding.getWEDDING_DATE());
 			
-			//Verificando se a data está vazia. Se sim, atruibuo a contagem para casamentos sem data
-			if(weddingDate == null) {
+			//Verificando se a data estï¿½ vazia. Se sim, atruibuo a contagem para casamentos sem data
+			if(weddingDate == null && !filterFlagDate) {
 				
 				if(filterFlagBudget) {
 						
@@ -91,12 +91,6 @@ public class BusinessHigherBudgetWeddings {
 				}
 				
 			} else if(weddingDate != null) {
-			//Se a data estiver preenchida, atribuo a contagem para o mês correto
-				
-				//Instanciando Calendário para trabalhar com as datas
-				Calendar calendar = new GregorianCalendar();
-		        calendar.setLenient(false);
-				calendar.setTimeInMillis(weddingDate.getTime());
 				
 				if(filterFlagDate && filterFlagBudget) {
 					

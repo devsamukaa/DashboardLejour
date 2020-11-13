@@ -14,17 +14,21 @@ public class BusinessParams {
 	private String year;
 	private String weddingType;
 	private Double budget;
+	private String sortBy;
+	private String order;
 	
 	public BusinessParams() {
 		
 	}
 	
-	public BusinessParams(Date dateFrom, Date dateUntil, String year, String weddingType, Double budget) {
+	public BusinessParams(Date dateFrom, Date dateUntil, String year, String weddingType, Double budget, String sortBy, String order) {
 		this.dateFrom = dateFrom;
 		this.dateUntil = dateUntil;
 		this.year = year;
 		this.weddingType = weddingType;
 		this.budget = budget;
+		this.sortBy = sortBy;
+		this.order = order;
 	}
 	
 	public BusinessParams(HttpServletRequest request) {
@@ -59,6 +63,14 @@ public class BusinessParams {
                 } else if (paramName.equals("budget")) {
                 	
                 	this.budget = Double.parseDouble(paramValue);
+                	
+                } else if (paramName.equals("ordernar_por")) {
+                	
+                	this.sortBy = paramValue;
+                	
+                } else if (paramName.equals("ordem")) {
+                	
+                	this.order = paramValue;
                 	
                 }
             	
@@ -106,6 +118,22 @@ public class BusinessParams {
 
 	public void setBudget(Double budget) {
 		this.budget = budget;
+	}
+
+	public String getSortBy() {
+		return sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
 	}
 	
 }
