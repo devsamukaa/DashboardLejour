@@ -7,6 +7,7 @@ public class Invoice {
 	private String AMOUNT;
 	private String VENDOR_AMOUNT;
 	private String ACCEPTED;
+	private String CREATED_AT;
 	
 	public int getID() {
 		return Integer.parseInt(ID);
@@ -56,6 +57,14 @@ public class Invoice {
 		ACCEPTED = Boolean.toString(aCCEPTED);
 	}
 	
+	public String getCREATED_AT() {
+		return CREATED_AT;
+	}
+
+	public void setCREATED_AT(String cREATED_AT) {
+		CREATED_AT = cREATED_AT;
+	}
+	
 	@Override
 	public String toString() {
 		return "[ID = "+ ID 
@@ -63,7 +72,10 @@ public class Invoice {
 				+ ", VENDOR_ID = "+ VENDOR_ID
 				+ ", AMOUNT = "+ AMOUNT
 				+ ", VENDOR_AMOUNT = "+ VENDOR_AMOUNT
+				+ ", CREATED_AT = "+ CREATED_AT
 				+", ACCEPTED = "+ ACCEPTED +"]";
 		
 	}
+
+	
 }

@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import br.com.dashboardlejour.bean.Invoice;
 import br.com.dashboardlejour.business.BusinessParams;
 import br.com.dashboardlejour.business.BusinessWeddingInTheYear;
 import br.com.dashboardlejour.helpers.DateHelper;
+import br.com.dashboardlejour.service.InvoiceService;
 
 /**
  * Servlet implementation class TesteServlet
@@ -37,25 +39,32 @@ public class TesteServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
-		BusinessParams businessParams = new BusinessParams(null, null, "2019", "moderno", null);
-		BusinessWeddingInTheYear business = new BusinessWeddingInTheYear();
+		//BusinessParams businessParams = new BusinessParams(null, null, "2019", "moderno", null);
+		//BusinessWeddingInTheYear business = new BusinessWeddingInTheYear();
 		
-		List<BusinessWeddingInTheYear> businessList = business.getWeddingsInTheYear(businessParams);
+		//List<BusinessWeddingInTheYear> businessList = business.getWeddingsInTheYear(businessParams);
 		
 		/*for (BusinessWeddingInTheYear item : businessList) {
 			response.getWriter().append(item.toString()+"<br>");
 		}*/
 		
-		String jsonString = new Gson().toJson(businessList);
-		response.getWriter().append(jsonString);
+		//String jsonString = new Gson().toJson(businessList);
+		//response.getWriter().append(jsonString);
 		
 		/*String teste = "2020-11-09 00:00:00";
 		
 		if(teste.indexOf("NULL") != -1) {
 			response.getWriter().append("ACHOU");
 		}else {
-			response.getWriter().append("NÃO ACHOU");
+			response.getWriter().append("Nï¿½O ACHOU");
 		}*/
+		
+		InvoiceService invoiceService = new InvoiceService();
+		List<Invoice> invoiceList = invoiceService.getAll();
+		
+		for (Invoice invoice : invoiceList) {
+			response.getWriter().append(invoice.toString()+"<br/>");
+		}
 		
 	}
 
