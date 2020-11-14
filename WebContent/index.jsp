@@ -1,41 +1,19 @@
+<%@ page import="java.util.*" language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" type="image/x-icon" href="https://home.lejour.com.br/assets/favicon.ico">
+    <%@ include file="include/header_imports.jsp" %>
     <title>Casamentos</title>
 </head>
 
 <body>
 
-    <div class="fixed-top menu shadow-sm d-block d-xl-none">
-        <nav class="navbar justify-content-end">
-            <img src="img/logo.png" class="mr-auto" alt="">
-            <button class="navbar-toggler " data-toggle="collapse" data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="img/Menu.png" alt="Logo">
-            </button>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-4">
-                <a href="./index.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom ativo">Casamentos</a>
-                <a href="./fornecedores.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom ">Fornecedores</a>
-            </div>
-        </div>
-    </div>
-
-    <aside class="d-none d-xl-block">
-        <div class="p-4">
-            <img class="ml-5 my-4" src="img/logo.png" class="mr-auto" alt="">
-            <a href="./index.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom ativo">Casamentos</a>
-            <a href="./fornecedores.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom">Fornecedores</a>
-        </div>
-    </aside>
+    <jsp:include page="include/menu.jsp" >
+	  <jsp:param name="casamentos" value="ativo" />
+	  <jsp:param name="fornecedores" value="" />
+	</jsp:include>
 
     <main>
         <!--Indicador de estilos de casamento por ano-->
@@ -66,9 +44,9 @@
                     <legend>Estilo</legend>
                     <select class="ml-3" name="estilo" id="style-weddings-year">
                         <option value="todos">Todos</option>
-                        <option value="classico">ClÃ¡ssico</option>
+                        <option value="classico">Clássico</option>
                         <option value="moderno">Moderno</option>
-                        <option value="rustico">RÃºstico</option>
+                        <option value="rustico">Rústico</option>
                     </select>
                 </fieldset>
 
@@ -148,9 +126,9 @@
                     <legend class="mb-0">Estilo</legend>
                     <select class="ml-3" name="estilo" id="style-status">
                         <option value="todos">Todos</option>
-                        <option value="classico">ClÃ¡ssico</option>
+                        <option value="classico">Clássico</option>
                         <option value="moderno">Moderno</option>
-                        <option value="rustico">RÃºstico</option>
+                        <option value="rustico">Rústico</option>
                     </select>
                 </fieldset>
                 <br/>
@@ -169,12 +147,8 @@
 
     <footer class="mt-3"></footer>
 
+    <%@ include file="include/footer_imports.jsp" %>
     
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
-
     <script src="js/wedding-page/wedding-charts.js"></script>
 </body>
 

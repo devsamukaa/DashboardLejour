@@ -1,42 +1,20 @@
+<%@ page import="java.util.*" language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <%@ include file="include/header_imports.jsp" %>
     <link rel="stylesheet" href="css/vendor.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" type="image/x-icon" href="https://home.lejour.com.br/assets/favicon.ico">
     <title>Fornecedores</title>
 </head>
 
 <body>
 
-    <div class="fixed-top menu shadow-sm d-block d-xl-none">
-        <nav class="navbar justify-content-end">
-            <img src="img/logo.png" class="mr-auto" alt="">
-            <button class="navbar-toggler " data-toggle="collapse" data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="img/Menu.png" alt="Logo">
-            </button>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-4">
-                <a href="./index.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom">Casamentos</a>
-                <a href="./fornecedores.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom ativo">Fornecedores</a>
-            </div>
-        </div>
-    </div>
-
-    <aside class="d-none d-xl-block">
-        <div class="p-4">
-            <img class="ml-5 my-4" src="img/logo.png" class="mr-auto" alt="">
-            <a href="./index.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom">Casamentos</a>
-            <a href="./fornecedores.html" class="menu-item mx-0 my-3 pl-3 pb-1 border-bottom ativo">Fornecedores</a>
-        </div>
-    </aside>
+    <jsp:include page="include/menu.jsp" >
+	  <jsp:param name="casamentos" value="" />
+	  <jsp:param name="fornecedores" value="ativo" />
+	</jsp:include>
 
     <main>
         <!-- Rentabilidade de Fornecedores -->
@@ -99,7 +77,7 @@
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-4-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-4-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -113,7 +91,7 @@
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-2-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-2-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -127,7 +105,7 @@
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-1-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-1-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -141,7 +119,7 @@
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-3-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-3-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -155,7 +133,7 @@
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-5-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-5-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
                     </div>
@@ -171,7 +149,7 @@
                     <img src="img/barraMenu.png">
                 </div>
                 <div class="box-text-title">
-                    <p>Or√ßamentos dos Fornecedores</p>
+                    <p>OrÁamentos dos Fornecedores</p>
                 </div>
             </div>
 
@@ -191,7 +169,7 @@
                     <legend class="mb-0">Ordernar Por</legend>
                     <select class="ml-3" name="order-by" id="invoices-orderby">
                         <option value="accepted_invoices">Aceitos</option>
-                        <option value="declined_invoices">N√£o aceitos</option>
+                        <option value="declined_invoices">N„o aceitos</option>
                     </select>
                 </fieldset>
 
@@ -219,11 +197,11 @@
                             <div class="box-vendor-data">
                                 <div class="box-line-vendor-data"><strong>ID: </strong><span id="invoice-id-vendor-fourty">...</span></div>
                                 <div class="box-line-vendor-data"><strong>ACEITAS: </strong><span id="invoice-accepted-vendor-fourty">...</span></div>
-                                <div class="box-line-vendor-data"><strong>N√ÉO ACEITAS: </strong><span id="invoice-declined-vendor-fourty">...</span></div>
+                                <div class="box-line-vendor-data"><strong>N√O ACEITAS: </strong><span id="invoice-declined-vendor-fourty">...</span></div>
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-4-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-4-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -231,11 +209,11 @@
                             <div class="box-vendor-data">
                                 <div class="box-line-vendor-data"><strong>ID: </strong><span id="invoice-id-vendor-seccond">...</span></div>
                                 <div class="box-line-vendor-data"><strong>ACEITAS: </strong><span id="invoice-accepted-vendor-seccond">...</span></div>
-                                <div class="box-line-vendor-data"><strong>N√ÉO ACEITAS: </strong><span id="invoice-declined-vendor-seccond">...</span></div>
+                                <div class="box-line-vendor-data"><strong>N√O ACEITAS: </strong><span id="invoice-declined-vendor-seccond">...</span></div>
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-2-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-2-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -243,11 +221,11 @@
                             <div class="box-vendor-data">
                                 <div class="box-line-vendor-data"><strong>ID: </strong><span id="invoice-id-vendor-first">...</span></div>
                                 <div class="box-line-vendor-data"><strong>ACEITAS: </strong><span id="invoice-accepted-vendor-first">...</span></div>
-                                <div class="box-line-vendor-data"><strong>N√ÉO ACEITAS: </strong><span id="invoice-declined-vendor-first">...</span></div>
+                                <div class="box-line-vendor-data"><strong>N√O ACEITAS: </strong><span id="invoice-declined-vendor-first">...</span></div>
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-1-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-1-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -255,11 +233,11 @@
                             <div class="box-vendor-data">
                                 <div class="box-line-vendor-data"><strong>ID: </strong><span id="invoice-id-vendor-third">...</span></div>
                                 <div class="box-line-vendor-data"><strong>ACEITAS: </strong><span id="invoice-accepted-vendor-third">...</span></div>
-                                <div class="box-line-vendor-data"><strong>N√ÉO ACEITAS: </strong><span id="invoice-declined-vendor-third">...</span></div>
+                                <div class="box-line-vendor-data"><strong>N√O ACEITAS: </strong><span id="invoice-declined-vendor-third">...</span></div>
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-3-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-3-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
 
@@ -267,11 +245,11 @@
                             <div class="box-vendor-data">
                                 <div class="box-line-vendor-data"><strong>ID: </strong><span id="invoice-id-vendor-fifty">...</span></div>
                                 <div class="box-line-vendor-data"><strong>ACEITAS: </strong><span id="invoice-accepted-vendor-fifty">...</span></div>
-                                <div class="box-line-vendor-data"><strong>N√ÉO ACEITAS: </strong><span id="invoice-declined-vendor-fifty">...</span></div>
+                                <div class="box-line-vendor-data"><strong>N√O ACEITAS: </strong><span id="invoice-declined-vendor-fifty">...</span></div>
                             </div>
                             <div class="box-vendor-bar"></div>
                             <div class="box-ic-vendor-position">
-                                <img src="img/ic-5-lugar.png" alt="√çcone de Segundo Lugar">
+                                <img src="img/ic-5-lugar.png" alt="Õcone de Segundo Lugar">
                             </div>
                         </div>
                     </div>
@@ -286,11 +264,7 @@
 
     <footer class="mt-3"></footer>
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+    <%@ include file="include/footer_imports.jsp" %>
 
     <script src="js/vendor-page/vendor.js"></script>
 </body>
