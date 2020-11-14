@@ -19,7 +19,7 @@ import br.com.dashboardlejour.business.BusinessWeddingStatus;
 /**
  * Servlet implementation class WeddingStatusServlet
  */
-@WebServlet("/WeddingStatusServlet")
+@WebServlet("/wedding_status")
 public class WeddingStatusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -51,8 +51,9 @@ public class WeddingStatusServlet extends HttpServlet {
 		 
         
 		PrintWriter out = response.getWriter();
-        //response.setContentType("application/json");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.addHeader("Access-Control-Allow-Origin", "*");
  
         BusinessParams businessParams = new BusinessParams(request);
         

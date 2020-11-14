@@ -16,12 +16,13 @@ public class BusinessParams {
 	private Double budget;
 	private String sortBy;
 	private String order;
+	private boolean disregardZero;
 	
 	public BusinessParams() {
 		
 	}
 	
-	public BusinessParams(Date dateFrom, Date dateUntil, String year, String weddingType, Double budget, String sortBy, String order) {
+	public BusinessParams(Date dateFrom, Date dateUntil, String year, String weddingType, Double budget, String sortBy, String order, boolean diresgardZero) {
 		this.dateFrom = dateFrom;
 		this.dateUntil = dateUntil;
 		this.year = year;
@@ -29,6 +30,7 @@ public class BusinessParams {
 		this.budget = budget;
 		this.sortBy = sortBy;
 		this.order = order;
+		this.setDisregardZero(diresgardZero);
 	}
 	
 	public BusinessParams(HttpServletRequest request) {
@@ -71,6 +73,10 @@ public class BusinessParams {
                 } else if (paramName.equals("ordem")) {
                 	
                 	this.order = paramValue;
+                	
+                } else if (paramName.equals("desconsiderar_zero")) {
+                	
+                	this.setDisregardZero(Boolean.parseBoolean(paramValue));
                 	
                 }
             	
@@ -134,6 +140,14 @@ public class BusinessParams {
 
 	public void setOrder(String order) {
 		this.order = order;
+	}
+
+	public boolean isDisregardZero() {
+		return disregardZero;
+	}
+
+	public void setDisregardZero(boolean disregardZero) {
+		this.disregardZero = disregardZero;
 	}
 	
 }

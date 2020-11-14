@@ -19,7 +19,7 @@ import br.com.dashboardlejour.business.BusinessParams;
 /**
  * Servlet implementation class HigherVendorsServlet
  */
-@WebServlet("/HigherVendorsServlet")
+@WebServlet("/higher_vendors")
 public class HigherVendorsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,8 +50,9 @@ public class HigherVendorsServlet extends HttpServlet {
 	public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		 
         PrintWriter out = response.getWriter();
-        //response.setContentType("application/json");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.addHeader("Access-Control-Allow-Origin", "*");
  
         BusinessParams businessParams = new BusinessParams(request);
         

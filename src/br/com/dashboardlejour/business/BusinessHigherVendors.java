@@ -122,6 +122,7 @@ public class BusinessHigherVendors {
 		
 		Boolean filterFlagDate = params.getDateFrom() != null && params.getDateUntil() != null;
 		Boolean filterFlagSortBy = params.getSortBy() != null && params.getOrder() != null;
+		Boolean filterFlagIsDisregardZero = params.isDisregardZero();
 		
 		List<BusinessHigherVendors> listHigherVendors = new ArrayList<BusinessHigherVendors>();
 		
@@ -167,6 +168,11 @@ public class BusinessHigherVendors {
 		
 		if(filterFlagSortBy) {
 			
+			if(params.isDisregardZero()) {
+				listHigherVendors = removeIndexWithValueMinorsZero(listHigherVendors, params);
+				BHVSorter = new BusinessHigherVendorsSorter(listHigherVendors);
+			}
+			
 			if( params.getSortBy().equals("profit_margin") && params.getOrder().equals("asc")) {
 				
 				return BHVSorter.getSortedHigherVendorsByProfitMarginAsc();
@@ -204,6 +210,36 @@ public class BusinessHigherVendors {
 		}
 		
 		return BHVSorter.getSortedHigherVendorsByProfitMarginDesc();
+		
+	}
+	
+	private List<BusinessHigherVendors> removeIndexWithValueMinorsZero(List<BusinessHigherVendors> list, BusinessParams params) {
+		
+		List<BusinessHigherVendors> returnList = new ArrayList<BusinessHigherVendors>();
+		
+		for (BusinessHigherVendors item : list) {
+			
+			if( params.getSortBy().equals("profit_margin") && item.getProfitMargin() > 0 ) {
+				
+				returnList.add(item);
+				
+			} else if( params.getSortBy().equals("total_profit") && item.getTotalProfit() > 0 ) {
+				
+				returnList.add(item);
+				
+			} else if( params.getSortBy().equals("accepted_invoices") && item.getAcceptedInvoices() > 0 ) {
+				
+				returnList.add(item);
+				
+			} else if( params.getSortBy().equals("declined_invoices") && item.getDeclinedInvoices() > 0 ) {
+				
+				returnList.add(item);
+				
+			}
+			
+		}
+		
+		return returnList;
 		
 	}
 	

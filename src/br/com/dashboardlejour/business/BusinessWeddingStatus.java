@@ -215,10 +215,10 @@ public class BusinessWeddingStatus {
 		
 		List<BusinessWeddingStatus> list = new ArrayList<BusinessWeddingStatus>();
 		
-		list.add(new BusinessWeddingStatus("criado", 0));
-		list.add(new BusinessWeddingStatus("em_pesquisa", 0));
-		list.add(new BusinessWeddingStatus("em_agendamento", 0));
-		list.add(new BusinessWeddingStatus("em_pagamento", 0));
+		list.add(new BusinessWeddingStatus("Criado", 0));
+		list.add(new BusinessWeddingStatus("Em pesquisa", 0));
+		list.add(new BusinessWeddingStatus("Em agendamento", 0));
+		list.add(new BusinessWeddingStatus("Em pagamento", 0));
 
 		
 		return list;
